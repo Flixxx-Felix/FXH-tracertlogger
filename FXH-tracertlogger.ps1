@@ -6,8 +6,8 @@
     The script monitors the network routing to different or individual addresses. It can be used for monitoring or problem analysis.
 
 .NOTES
-    File: TracerouteLogger.ps1
-    Author: Your Name
+    File: FXH-tracertlogger.ps1
+    Author: Felix Haller
     Date: July 3, 2024
     Version: 1.0
 
