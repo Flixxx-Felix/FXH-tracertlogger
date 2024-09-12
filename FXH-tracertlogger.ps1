@@ -20,8 +20,20 @@
 
 ### Variables ###
 $urls = @()
-$enableLoop = Read-Host "Should the script be executed repeatedly? (true/false)"
+$enableLoop = Get-BooleanInput "Should the script be executed repeatedly? (true/false)"
 $filePath = "C:\Users\$env:username\Desktop\fxh-tracertlog.txt"
+
+function Get-BooleanInput($prompt) {
+    do {
+        $ModuleInput = Read-Host $prompt
+        $isValid = $ModuleInput -match '^(true|false)$'
+
+        if (-not $isValid) {
+            Write-Host 'Enter "true" or "false".'
+        }
+    } while (-not $isValid)
+    return [bool]::Parse($ModuleInput)
+}
 
 ### Loop for entering URLs ###
 while ($true) {
